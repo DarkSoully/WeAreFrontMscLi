@@ -1,0 +1,23 @@
+<h3>Sign up</h3>
+  <form>
+  <table>
+  <tr>
+	  <td>Email:</td>
+	  <td><input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required/></td>
+  </tr>
+  <tr>
+	  <td>Password:</td>
+  	<td><input type="password" [(ngModel)]="pw" [ngModelOptions]="{standalone: true}" required/></td>
+  </tr>
+  <tr>
+  	<td></td>
+	  <td><button type="submit" (click)="signup()">Sign up</button></td>
+      <td><button type="submit" (click)="login()">login</button></td>
+  </tr>
+  <tr>
+  <td [hidden]="!authed">Successfully logged in!</td>
+  <td [hidden]="authed">Not logged in</td>
+  <td></td>
+  </tr>
+  </table>
+  </form>

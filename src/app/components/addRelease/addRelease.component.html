@@ -1,0 +1,22 @@
+<section id="intro" class="intro-section">
+	<div class="container">
+		<div class="row">
+			<form>
+				<div class="form-group">
+					<input type="text" name="searchStr" [(ngModel)]="searchStr" (keyup.enter)="searchMusic()" (keyup.backspace)="clearMusic()" class="form-control" placeholder="Search Music...">
+				</div>
+			</form>
+			<div *ngIf="searchRes">
+				<div *ngFor="let res of searchRes">
+					<div class="row">
+						<div class="col-md-12">
+							<div name="album" *ngIf="res.name!=null && searchStr!='' && visible">
+								<album></album>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

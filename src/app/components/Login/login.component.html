@@ -1,0 +1,25 @@
+<section id="intro" class="intro-section">
+  <div class="container">
+    <div class="row">
+      <div><modal #modal>
+        <modal-header align="center" [show-close]="true">
+          <h4 class="modal-title">Login</h4>
+        </modal-header>
+        <modal-body align="center">
+          <form>
+            <label>Username: </label>
+            <input type="text" id="username">
+            <br>
+            <label>Password: </label>
+            <input type="password" id="password">
+          </form>
+        </modal-body>
+        <modal-footer>
+          <button  type="button" class="btn btn-default" data-dismiss="modal" (click)="modal.dismiss()">Cancel</button>
+          <button type="button" class="btn btn-primary" (click)="modal.close()">Ok</button>
+        </modal-footer>
+      </modal>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+<section id="intro" class="intro-section">
+	<div class="container">
+		<div class="row">
+			<div id="album" *ngIf="album">
+				<header class="album-header">
+					<div class="row">
+						<div class="col-md-8">
+							<div *ngIf="album.images.length > 0">
+								<img class="album-thumb" src="{{album.images[0].url}}" width="90%">
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="col-md-4 col-sm-11 col-xs-11 row " style="margin-top:10px">
+								<button type="button" class="btn btn-primary btn-lg" (click)="addRelease()">Add release <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+								<!--<a href="{{album.external_urls.spotify}}"><img src="../../../assets/icon-spotify.png" width="100%"/></a> -->
+							</div>
+							<div class="pull-right">
+								<h4 *ngIf="album.artists.length > 0"><span *ngFor="let artist of album.artists">{{artist.name}}</span></h4>
+								<h2>{{album.name}}</h2>
+								<h5>Release Date: {{album.release_date}}</h5>
+
+								<div class="album-tracks" align="left">
+									<h2>Album Tracks</h2>
+									<div *ngFor="let track of album.tracks.items">
+										<div class="items">
+											<h5>{{track.track_number}} - {{track.name}}</h5>
+											<!--<a href="{{track.preview_url}}" target="_blank">Preview Track</a> -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-md-4 col-sm-11 col-xs-11 row pull-right" style="margin-top:10px">
+						<!--<a href="{{album.external_urls.spotify}}"><img src="../../../assets/icon-spotify.png" width="100%"/></a> -->
+					</div>
+				</header>
+			</div>
+		</div>
+
+	</div>
+</section>
